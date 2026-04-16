@@ -1,0 +1,118 @@
+:root {
+  --color-primary: #6D94C5;
+  --color-primary-light: #CBDCEB;
+  --color-accent: #E8DFCA;
+  --color-background: #F5EFE6;
+  --color-text: #333333;
+  --color-text-light: #666666;
+  --color-white: #ffffff;
+  --color-error: #e74c3c;
+  --color-success: #2ecc71;
+  --transition-speed: 0.3s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-primary);
+  transition: color var(--transition-speed) ease;
+}
+
+a:hover {
+  color: #5579a1;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all var(--transition-speed) ease;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.btn-primary:hover {
+  background-color: #5579a1;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(109, 148, 197, 0.3);
+}
+
+.btn-secondary {
+  background-color: var(--color-accent);
+  color: var(--color-text);
+}
+
+.btn-secondary:hover {
+  background-color: #d1c8b2;
+  transform: translateY(-2px);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+}
+
+/* Forms */
+input, select, textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid rgba(109, 148, 197, 0.2);
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: var(--color-white);
+  transition: border-color var(--transition-speed) ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-light);
+}
+
+/* Map specific styles */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  z-index: 1;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
